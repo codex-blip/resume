@@ -6,7 +6,6 @@ import { loadFull } from 'tsparticles';
 import Navigation from './Navigation';
 import { FaGithub, FaLinkedinIn, FaInstagram, FaCode } from 'react-icons/fa';
 
-// All styled components
 const HeroSection = styled.section`
   height: 100vh;
   display: flex;
@@ -24,6 +23,50 @@ const HeroSection = styled.section`
     50% { background-position: 100% 50% }
     100% { background-position: 0% 50% }
   }
+`;
+
+const Content = styled.div`
+  text-align: center;
+  z-index: 2;
+`;
+
+const Name = styled(motion.h1)`
+  font-size: 5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #64ffda, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  cursor: default;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+`;
+
+const Role = styled(motion.p)`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #8892b0;
+  font-weight: 600;
+`;
+
+const Description = styled(motion.p)`
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #64ffda;
+`;
+
+const Tagline = styled(motion.p)`
+  color: #8892b0;
+  font-size: 1.2rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  line-height: 1.6;
 `;
 
 const Button = styled(motion.button)`
@@ -60,31 +103,93 @@ const Button = styled(motion.button)`
   }
 `;
 
-const Name = styled(motion.h1)`
-  font-size: 5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  background: linear-gradient(120deg, #64ffda, #ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -1px;
-  cursor: default;
+const ScrollIndicator = styled(motion.div)`
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+`;
 
+const ScrollDot = styled(motion.div)`
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto;
+`;
+
+const SocialLinks = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+`;
+
+const SocialIcon = styled(motion.a)`
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  
   &:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
+    color: #64ffda;
+    border-color: #64ffda;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
   }
 `;
 
-// Add this hook at the start of your component
-const AboutMe = styled(motion.div)`
-        margin-top: 2rem;
-        max-width: 800px;
-        margin: 2rem auto;
-        color: #8892b0;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      `;
+const particlesOptions = {
+  background: { opacity: 0 },
+  particles: {
+    number: { value: 50 },
+    color: { value: "#64ffda" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: {
+      enable: true,
+      speed: 0.8,
+      direction: "none",
+      random: true,
+      straight: false,
+      outModes: "out",
+    },
+    links: {
+      enable: true,
+      color: "#64ffda",
+      opacity: 0.2,
+      distance: 150,
+    },
+  },
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "grab"
+      },
+      onClick: {
+        enable: true,
+        mode: "push"
+      }
+    },
+    modes: {
+      grab: {
+        distance: 140,
+        links: { opacity: 0.5 }
+      },
+      push: { quantity: 4 }
+    }
+  }
+};
+
 const Hero = () => {
   const [scrollY, setScrollY] = React.useState(0);
 
@@ -124,7 +229,7 @@ const Hero = () => {
           width: "100%",
           height: "100%",
         }}
-ya       />
+      />
       <Content>
         <Name
           initial={{ opacity: 0, y: -50 }}
@@ -199,7 +304,12 @@ ya       />
             <FaInstagram />
           </SocialIcon>
         </SocialLinks>
-        <Button>View My Work</Button>
+        <Button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          View My Work
+        </Button>
       </Content>
       <ScrollIndicator
         onClick={scrollToNext}
@@ -216,120 +326,3 @@ ya       />
 };
 
 export default Hero;
-
-// Add these styled components after the existing ones
-const Content = styled.div`
-  text-align: center;
-  z-index: 2;
-`;
-
-const Role = styled(motion.p)`
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #8892b0;
-  font-weight: 600;
-`;
-
-const Description = styled(motion.p)`
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: #64ffda;
-`;
-
-const Tagline = styled(motion.p)`
-  color: #8892b0;
-  font-size: 1.2rem;
-  margin: 1rem auto;
-  max-width: 600px;
-  line-height: 1.6;
-`;
-
-const ScrollIndicator = styled(motion.div)`
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-`;
-
-const ScrollDot = styled(motion.div)`
-  width: 8px;
-  height: 8px;
-  background: white;
-  border-radius: 50%;
-  margin: 0 auto;
-`;
-
-const SocialLinks = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-`;
-
-const SocialIcon = styled(motion.a)`
-  color: white;
-  font-size: 1.8rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  
-  &:hover {
-    color: #64ffda;
-    border-color: #64ffda;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
-  }
-`;
-
-// Add this before the Hero component
-const particlesOptions = {
-  background: { opacity: 0 },
-  particles: {
-    number: { value: 50 },
-    color: { value: "#64ffda" },
-    opacity: { value: 0.5 },
-    size: { value: 3 },
-    move: {
-      enable: true,
-      speed: 0.8,
-      direction: "none",
-      random: true,
-      straight: false,
-      outModes: "out",
-    },
-    links: {
-      enable: true,
-      color: "#64ffda",
-      opacity: 0.2,
-      distance: 150,
-    },
-  },
-  interactivity: {
-    events: {
-      onHover: {
-        enable: true,
-        mode: "grab"
-      },
-      onClick: {
-        enable: true,
-        mode: "push"
-      }
-    },
-    modes: {
-      grab: {
-        distance: 140,
-        links: { opacity: 0.5 }
-      },
-      push: { quantity: 4 }
-    }
-  }
-};
