@@ -127,7 +127,7 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
           >
             <ExperienceTitle>E-commerce Platform</ExperienceTitle>
-            <ExperienceDate>2024</ExperienceDate>
+            <ExperienceDate>2025</ExperienceDate>
             <ul>
               <li>Built a full-stack e-commerce platform with React and Node.js</li>
               <li>Implemented secure payment gateway integration and shopping cart</li>
@@ -143,7 +143,7 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <ExperienceTitle>Dating Website Project</ExperienceTitle>
-            <ExperienceDate>2024</ExperienceDate>
+            <ExperienceDate>2025</ExperienceDate>
             <ul>
               <li>Developed a full-stack dating website using React and Node.js</li>
               <li>Implemented user authentication and profile management</li>
