@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/resume/static/css/main.e6c13ad2.css",
+    "main.js": "/resume/static/js/main.43054cad.js",
+    "static/js/453.f19e9853.chunk.js": "/resume/static/js/453.f19e9853.chunk.js",
+    "static/media/cse.jpg": "/resume/static/media/cse.8f085a4f8bf0dfd07451.jpg",
+    "static/media/pic_of_myself.webp": "/resume/static/media/pic_of_myself.f06481027154b1cb9686.webp",
+    "static/media/IIT-Ropar-Logo.webp": "/resume/static/media/IIT-Ropar-Logo.e81e88302ee0fcc0f170.webp",
+    "index.html": "/resume/index.html",
+    "main.e6c13ad2.css.map": "/resume/static/css/main.e6c13ad2.css.map",
+    "main.43054cad.js.map": "/resume/static/js/main.43054cad.js.map",
+    "453.f19e9853.chunk.js.map": "/resume/static/js/453.f19e9853.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.43054cad.js"
+  ]
+}
