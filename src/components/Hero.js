@@ -295,7 +295,7 @@ const Hero = () => {
             <FaCode />
           </SocialIcon>
           <SocialIcon
-            href="https://instagram.com/manankumar_69420"
+            href="https://instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
